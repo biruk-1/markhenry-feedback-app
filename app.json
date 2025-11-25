@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "Mark Henry LL152 Gas Inspections",
+    "slug": "mark-henry-ll152-gas-inspections",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#2196F3"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gasinspection.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#2196F3"
+      },
+      "package": "com.gasinspection.app",
+      "permissions": []
+    },
+    "plugins": [
+      "expo-mail-composer"
+    ]
+  }
+}
