@@ -22,6 +22,11 @@
     },
     "plugins": [
       "expo-mail-composer"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "8cfc30b4-06be-4b27-af2a-3ec2772ececc"
+      }
+    }
   }
 }

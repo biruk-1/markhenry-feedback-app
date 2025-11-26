@@ -13,8 +13,10 @@ import {
   Platform,
   FlatList,
   Dimensions,
+  Modal,
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import DateTimePicker from '@react-native-community/datetimepicker';
 import { generateInspectionPDF } from './pdfGenerator';
 
 const App = () => {
@@ -543,54 +545,63 @@ const LocationScreen = ({ formData, updateFormData, onNext, onBack }) => {
         <TextInput
           style={styles.input}
           placeholder="House No(s)"
+          placeholderTextColor="#666"
           value={formData.houseNo}
           onChangeText={(text) => updateFormData('houseNo', text)}
         />
         <TextInput
           style={styles.input}
           placeholder="Street Name"
+          placeholderTextColor="#666"
           value={formData.streetName}
           onChangeText={(text) => updateFormData('streetName', text)}
         />
         <TextInput
           style={styles.input}
           placeholder="Owner Name"
+          placeholderTextColor="#666"
           value={formData.ownerName}
           onChangeText={(text) => updateFormData('ownerName', text)}
         />
         <TextInput
           style={styles.input}
           placeholder="Borough"
+          placeholderTextColor="#666"
           value={formData.borough}
           onChangeText={(text) => updateFormData('borough', text)}
         />
         <TextInput
           style={styles.input}
           placeholder="Block"
+          placeholderTextColor="#666"
           value={formData.block}
           onChangeText={(text) => updateFormData('block', text)}
         />
         <TextInput
           style={styles.input}
           placeholder="Lot"
+          placeholderTextColor="#666"
           value={formData.lot}
           onChangeText={(text) => updateFormData('lot', text)}
         />
         <TextInput
           style={styles.input}
           placeholder="BIN"
+          placeholderTextColor="#666"
           value={formData.bin}
           onChangeText={(text) => updateFormData('bin', text)}
         />
         <TextInput
           style={styles.input}
           placeholder="Community Board No."
+          placeholderTextColor="#666"
           value={formData.communityBoard}
           onChangeText={(text) => updateFormData('communityBoard', text)}
         />
         <TextInput
           style={styles.input}
           placeholder="Number of Stories"
+          placeholderTextColor="#666"
           value={formData.numberOfStories}
           onChangeText={(text) => updateFormData('numberOfStories', text)}
           keyboardType="numeric"
@@ -598,6 +609,7 @@ const LocationScreen = ({ formData, updateFormData, onNext, onBack }) => {
         <TextInput
           style={styles.input}
           placeholder="Number of Meters"
+          placeholderTextColor="#666"
           value={formData.numberOfMeters}
           onChangeText={(text) => updateFormData('numberOfMeters', text)}
           keyboardType="numeric"
@@ -605,6 +617,7 @@ const LocationScreen = ({ formData, updateFormData, onNext, onBack }) => {
         <TextInput
           style={styles.input}
           placeholder="Active Meters"
+          placeholderTextColor="#666"
           value={formData.activeMeters}
           onChangeText={(text) => updateFormData('activeMeters', text)}
           keyboardType="numeric"
@@ -646,30 +659,35 @@ const PlumberScreen = ({ formData, updateFormData, onNext, onBack }) => {
         <TextInput
           style={styles.input}
           placeholder="First Name"
+          placeholderTextColor="#666"
           value={formData.plumberFirstName}
           onChangeText={(text) => updateFormData('plumberFirstName', text)}
         />
         <TextInput
           style={styles.input}
           placeholder="Last Name"
+          placeholderTextColor="#666"
           value={formData.plumberLastName}
           onChangeText={(text) => updateFormData('plumberLastName', text)}
         />
         <TextInput
           style={styles.input}
           placeholder="Middle Name"
+          placeholderTextColor="#666"
           value={formData.plumberMiddleName}
           onChangeText={(text) => updateFormData('plumberMiddleName', text)}
         />
         <TextInput
           style={styles.input}
           placeholder="Company Name"
+          placeholderTextColor="#666"
           value={formData.plumberCompany}
           onChangeText={(text) => updateFormData('plumberCompany', text)}
         />
         <TextInput
           style={styles.input}
           placeholder="Phone"
+          placeholderTextColor="#666"
           value={formData.plumberPhone}
           onChangeText={(text) => updateFormData('plumberPhone', text)}
           keyboardType="phone-pad"
@@ -677,30 +695,35 @@ const PlumberScreen = ({ formData, updateFormData, onNext, onBack }) => {
         <TextInput
           style={styles.input}
           placeholder="Business Fax"
+          placeholderTextColor="#666"
           value={formData.plumberFax}
           onChangeText={(text) => updateFormData('plumberFax', text)}
         />
         <TextInput
           style={styles.input}
           placeholder="Address"
+          placeholderTextColor="#666"
           value={formData.plumberAddress}
           onChangeText={(text) => updateFormData('plumberAddress', text)}
         />
         <TextInput
           style={styles.input}
           placeholder="City"
+          placeholderTextColor="#666"
           value={formData.plumberCity}
           onChangeText={(text) => updateFormData('plumberCity', text)}
         />
         <TextInput
           style={styles.input}
           placeholder="State"
+          placeholderTextColor="#666"
           value={formData.plumberState}
           onChangeText={(text) => updateFormData('plumberState', text)}
         />
         <TextInput
           style={styles.input}
           placeholder="Zip Code"
+          placeholderTextColor="#666"
           value={formData.plumberZip}
           onChangeText={(text) => updateFormData('plumberZip', text)}
           keyboardType="numeric"
@@ -708,6 +731,7 @@ const PlumberScreen = ({ formData, updateFormData, onNext, onBack }) => {
         <TextInput
           style={styles.input}
           placeholder="Cell Phone"
+          placeholderTextColor="#666"
           value={formData.plumberCellPhone}
           onChangeText={(text) => updateFormData('plumberCellPhone', text)}
           keyboardType="phone-pad"
@@ -715,6 +739,7 @@ const PlumberScreen = ({ formData, updateFormData, onNext, onBack }) => {
         <TextInput
           style={styles.input}
           placeholder="Email"
+          placeholderTextColor="#666"
           value={formData.plumberEmail}
           onChangeText={(text) => updateFormData('plumberEmail', text)}
           keyboardType="email-address"
@@ -722,6 +747,7 @@ const PlumberScreen = ({ formData, updateFormData, onNext, onBack }) => {
         <TextInput
           style={styles.input}
           placeholder="License Number"
+          placeholderTextColor="#666"
           value={formData.plumberLicense}
           onChangeText={(text) => updateFormData('plumberLicense', text)}
         />
@@ -737,111 +763,6 @@ const PlumberScreen = ({ formData, updateFormData, onNext, onBack }) => {
 
 // Inspection Screen 1
 const InspectionScreen1 = ({ formData, updateFormData, onNext, onBack }) => {
-  return (
-    <KeyboardAvoidingView 
-      style={styles.screenContainer}
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 20}
-    >
-      <View style={styles.navigationHeader}>
-        <TouchableOpacity onPress={onBack}>
-          <Text style={styles.backButton}>◀ BACK</Text>
-        </TouchableOpacity>
-        <Text style={styles.navTitle}>Inspection Results</Text>
-        <TouchableOpacity style={styles.nextButton} onPress={onNext}>
-          <Text style={styles.nextButtonText}>NEXT ▶</Text>
-        </TouchableOpacity>
-      </View>
-
-      <ScrollView 
-        style={styles.scrollView}
-        contentContainerStyle={styles.scrollViewContent}
-        showsVerticalScrollIndicator={false}
-        keyboardShouldPersistTaps="handled"
-      >
-        <View style={styles.switchRow}>
-          <Text style={styles.switchLabel}>Include Picture?</Text>
-          <Switch
-            value={formData.wornPartsIncludePicture}
-            onValueChange={(value) => updateFormData('wornPartsIncludePicture', value)}
-          />
-        </View>
-
-        <View style={styles.sectionHeader}>
-          <Text style={styles.sectionHeaderText}>Worn Part(s) Affecting Safe and Reliable Operation</Text>
-        </View>
-
-        <TouchableOpacity
-          style={[styles.radioOption, formData.wornPartsAffectingSafety === 'no' && styles.radioSelected]}
-          onPress={() => updateFormData('wornPartsAffectingSafety', 'no')}
-        >
-          <Text style={styles.radioText}>No Condition(s) Observed</Text>
-          <View style={[styles.radioCircle, formData.wornPartsAffectingSafety === 'no' && styles.radioCircleSelected]} />
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[styles.radioOption, formData.wornPartsAffectingSafety === 'yes' && styles.radioSelected]}
-          onPress={() => updateFormData('wornPartsAffectingSafety', 'yes')}
-        >
-          <Text style={styles.radioText}>Condition(s) Observed</Text>
-          <View style={[styles.radioCircle, formData.wornPartsAffectingSafety === 'yes' && styles.radioCircleSelected]} />
-        </TouchableOpacity>
-
-        <TextInput
-          style={styles.textArea}
-          placeholder="Conditions Observed"
-          value={formData.wornPartsDetails}
-          onChangeText={(text) => updateFormData('wornPartsDetails', text)}
-          multiline
-        />
-
-        <View style={styles.switchRow}>
-          <Text style={styles.switchLabel}>Include Picture?</Text>
-          <Switch
-            value={formData.otherUnsafeIncludePicture}
-            onValueChange={(value) => updateFormData('otherUnsafeIncludePicture', value)}
-          />
-        </View>
-
-        <View style={styles.sectionHeader}>
-          <Text style={styles.sectionHeaderText}>Other Unsafe Condition(s)</Text>
-        </View>
-
-        <TouchableOpacity
-          style={[styles.radioOption, formData.otherUnsafeConditions === 'no' && styles.radioSelected]}
-          onPress={() => updateFormData('otherUnsafeConditions', 'no')}
-        >
-          <Text style={styles.radioText}>No Condition(s) Observed</Text>
-          <View style={[styles.radioCircle, formData.otherUnsafeConditions === 'no' && styles.radioCircleSelected]} />
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[styles.radioOption, formData.otherUnsafeConditions === 'yes' && styles.radioSelected]}
-          onPress={() => updateFormData('otherUnsafeConditions', 'yes')}
-        >
-          <Text style={styles.radioText}>Condition(s) Observed</Text>
-          <View style={[styles.radioCircle, formData.otherUnsafeConditions === 'yes' && styles.radioCircleSelected]} />
-        </TouchableOpacity>
-
-        <TextInput
-          style={styles.textArea}
-          placeholder="Conditions Observed"
-          value={formData.otherUnsafeDetails}
-          onChangeText={(text) => updateFormData('otherUnsafeDetails', text)}
-          multiline
-        />
-        
-        {/* Bottom Next Button */}
-        <TouchableOpacity style={styles.bottomNextButton} onPress={onNext}>
-          <Text style={styles.bottomNextButtonText}>NEXT ▶</Text>
-        </TouchableOpacity>
-      </ScrollView>
-    </KeyboardAvoidingView>
-  );
-};
-
-// Inspection Screen 2
-const InspectionScreen2 = ({ formData, updateFormData, onNext, onBack }) => {
   return (
     <KeyboardAvoidingView 
       style={styles.screenContainer}
@@ -917,6 +838,7 @@ const InspectionScreen2 = ({ formData, updateFormData, onNext, onBack }) => {
         <TextInput
           style={styles.textArea}
           placeholder="Conditions Observed"
+          placeholderTextColor="#666"
           value={formData.improperFlexHoseDetails}
           onChangeText={(text) => updateFormData('improperFlexHoseDetails', text)}
           multiline
@@ -953,8 +875,116 @@ const InspectionScreen2 = ({ formData, updateFormData, onNext, onBack }) => {
         <TextInput
           style={styles.textArea}
           placeholder="Conditions Observed"
+          placeholderTextColor="#666"
           value={formData.illegalConnections2Details}
           onChangeText={(text) => updateFormData('illegalConnections2Details', text)}
+          multiline
+        />
+        
+        {/* Bottom Next Button */}
+        <TouchableOpacity style={styles.bottomNextButton} onPress={onNext}>
+          <Text style={styles.bottomNextButtonText}>NEXT ▶</Text>
+        </TouchableOpacity>
+      </ScrollView>
+    </KeyboardAvoidingView>
+  );
+};
+
+// Inspection Screen 2
+const InspectionScreen2 = ({ formData, updateFormData, onNext, onBack }) => {
+  return (
+    <KeyboardAvoidingView 
+      style={styles.screenContainer}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 20}
+    >
+      <View style={styles.navigationHeader}>
+        <TouchableOpacity onPress={onBack}>
+          <Text style={styles.backButton}>◀ BACK</Text>
+        </TouchableOpacity>
+        <Text style={styles.navTitle}>Inspection Results</Text>
+        <TouchableOpacity style={styles.nextButton} onPress={onNext}>
+          <Text style={styles.nextButtonText}>NEXT ▶</Text>
+        </TouchableOpacity>
+      </View>
+
+      <ScrollView 
+        style={styles.scrollView}
+        contentContainerStyle={styles.scrollViewContent}
+        showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+      >
+        <View style={styles.switchRow}>
+          <Text style={styles.switchLabel}>Include Picture?</Text>
+          <Switch
+            value={formData.wornPartsIncludePicture}
+            onValueChange={(value) => updateFormData('wornPartsIncludePicture', value)}
+          />
+        </View>
+
+        <View style={styles.sectionHeader}>
+          <Text style={styles.sectionHeaderText}>Worn Part(s) Affecting Safe and Reliable Operation</Text>
+        </View>
+
+        <TouchableOpacity
+          style={[styles.radioOption, formData.wornPartsAffectingSafety === 'no' && styles.radioSelected]}
+          onPress={() => updateFormData('wornPartsAffectingSafety', 'no')}
+        >
+          <Text style={styles.radioText}>No Condition(s) Observed</Text>
+          <View style={[styles.radioCircle, formData.wornPartsAffectingSafety === 'no' && styles.radioCircleSelected]} />
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={[styles.radioOption, formData.wornPartsAffectingSafety === 'yes' && styles.radioSelected]}
+          onPress={() => updateFormData('wornPartsAffectingSafety', 'yes')}
+        >
+          <Text style={styles.radioText}>Condition(s) Observed</Text>
+          <View style={[styles.radioCircle, formData.wornPartsAffectingSafety === 'yes' && styles.radioCircleSelected]} />
+        </TouchableOpacity>
+
+        <TextInput
+          style={styles.textArea}
+          placeholder="Conditions Observed"
+          placeholderTextColor="#666"
+          value={formData.wornPartsDetails}
+          onChangeText={(text) => updateFormData('wornPartsDetails', text)}
+          multiline
+        />
+
+        <View style={styles.switchRow}>
+          <Text style={styles.switchLabel}>Include Picture?</Text>
+          <Switch
+            value={formData.otherUnsafeIncludePicture}
+            onValueChange={(value) => updateFormData('otherUnsafeIncludePicture', value)}
+          />
+        </View>
+
+        <View style={styles.sectionHeader}>
+          <Text style={styles.sectionHeaderText}>Other Unsafe Condition(s)</Text>
+        </View>
+
+        <TouchableOpacity
+          style={[styles.radioOption, formData.otherUnsafeConditions === 'no' && styles.radioSelected]}
+          onPress={() => updateFormData('otherUnsafeConditions', 'no')}
+        >
+          <Text style={styles.radioText}>No Condition(s) Observed</Text>
+          <View style={[styles.radioCircle, formData.otherUnsafeConditions === 'no' && styles.radioCircleSelected]} />
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={[styles.radioOption, formData.otherUnsafeConditions === 'yes' && styles.radioSelected]}
+          onPress={() => updateFormData('otherUnsafeConditions', 'yes')}
+        >
+          <Text style={styles.radioText}>Condition(s) Observed</Text>
+          <View style={[styles.radioCircle, formData.otherUnsafeConditions === 'yes' && styles.radioCircleSelected]} />
+        </TouchableOpacity>
+
+        <TextInput
+          style={styles.textArea}
+          placeholder="Conditions Observed"
+          placeholderTextColor="#666"
+          value={formData.otherUnsafeDetails}
+          onChangeText={(text) => updateFormData('otherUnsafeDetails', text)}
           multiline
         />
         
@@ -994,6 +1024,7 @@ const CommentsScreen = ({ formData, updateFormData, onNext, onBack }) => {
         <TextInput
           style={[styles.textArea, { height: 200 }]}
           placeholder="Please enter any additional comments"
+          placeholderTextColor="#666"
           value={formData.additionalComments}
           onChangeText={(text) => updateFormData('additionalComments', text)}
           multiline
@@ -1018,6 +1049,64 @@ const CommentsScreen = ({ formData, updateFormData, onNext, onBack }) => {
 
 // Certifications Screen
 const CertificationsScreen = ({ formData, updateFormData, onBack, onSubmit }) => {
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(
+    formData.inspectionDate ? new Date(formData.inspectionDate) : new Date()
+  );
+
+  // Update selectedDate when formData.inspectionDate changes (e.g., when loading a saved report)
+  useEffect(() => {
+    if (formData.inspectionDate) {
+      // Parse MM/DD/YYYY format
+      const dateParts = formData.inspectionDate.split('/');
+      if (dateParts.length === 3) {
+        const month = parseInt(dateParts[0], 10) - 1; // Month is 0-indexed
+        const day = parseInt(dateParts[1], 10);
+        const year = parseInt(dateParts[2], 10);
+        const date = new Date(year, month, day);
+        if (!isNaN(date.getTime())) {
+          setSelectedDate(date);
+        }
+      } else {
+        // Try parsing as ISO string or other format
+        const date = new Date(formData.inspectionDate);
+        if (!isNaN(date.getTime())) {
+          setSelectedDate(date);
+        }
+      }
+    }
+  }, [formData.inspectionDate]);
+
+  const formatDate = (date) => {
+    if (!date) return '';
+    const d = date instanceof Date ? date : new Date(date);
+    if (isNaN(d.getTime())) return '';
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    const year = d.getFullYear();
+    return `${month}/${day}/${year}`;
+  };
+
+  const handleDateChange = (event, date) => {
+    if (Platform.OS === 'android') {
+      setShowDatePicker(false);
+    }
+    
+    if (date) {
+      setSelectedDate(date);
+      const formattedDate = formatDate(date);
+      updateFormData('inspectionDate', formattedDate);
+    }
+    
+    if (Platform.OS === 'android' && event.type === 'dismissed') {
+      setShowDatePicker(false);
+    }
+  };
+
+  const openDatePicker = () => {
+    setShowDatePicker(true);
+  };
+
   return (
     <KeyboardAvoidingView 
       style={styles.screenContainer}
@@ -1068,12 +1157,63 @@ const CertificationsScreen = ({ formData, updateFormData, onBack, onSubmit }) =>
           </Text>
         </TouchableOpacity>
 
-        <TextInput
-          style={styles.input}
-          placeholder="Date of initial inspection:"
-          value={formData.inspectionDate}
-          onChangeText={(text) => updateFormData('inspectionDate', text)}
-        />
+        <View style={styles.datePickerSection}>
+          <Text style={styles.datePickerLabel}>Date of Initial Inspection</Text>
+          <TouchableOpacity 
+            style={styles.datePickerButton}
+            onPress={openDatePicker}
+            activeOpacity={0.7}
+          >
+            <Text style={styles.datePickerIcon}>📅</Text>
+            <Text style={formData.inspectionDate ? styles.dateInputText : styles.dateInputPlaceholder}>
+              {formData.inspectionDate || 'Tap to select date'}
+            </Text>
+            <Text style={styles.datePickerArrow}>▼</Text>
+          </TouchableOpacity>
+        </View>
+
+        {showDatePicker && (
+          Platform.OS === 'ios' ? (
+            <Modal
+              transparent={true}
+              animationType="slide"
+              visible={showDatePicker}
+              onRequestClose={() => setShowDatePicker(false)}
+            >
+              <View style={styles.datePickerModal}>
+                <View style={styles.datePickerContainer}>
+                  <View style={styles.datePickerHeader}>
+                    <TouchableOpacity onPress={() => setShowDatePicker(false)}>
+                      <Text style={styles.datePickerModalButton}>Cancel</Text>
+                    </TouchableOpacity>
+                    <Text style={styles.datePickerTitle}>Select Date</Text>
+                    <TouchableOpacity onPress={() => {
+                      const formattedDate = formatDate(selectedDate);
+                      updateFormData('inspectionDate', formattedDate);
+                      setShowDatePicker(false);
+                    }}>
+                      <Text style={[styles.datePickerModalButton, styles.datePickerButtonDone]}>Done</Text>
+                    </TouchableOpacity>
+                  </View>
+                  <DateTimePicker
+                    value={selectedDate}
+                    mode="date"
+                    display="spinner"
+                    onChange={handleDateChange}
+                    style={styles.datePicker}
+                  />
+                </View>
+              </View>
+            </Modal>
+          ) : (
+            <DateTimePicker
+              value={selectedDate}
+              mode="date"
+              display="default"
+              onChange={handleDateChange}
+            />
+          )
+        )}
 
         <Text style={styles.sectionTitle}>Check all that apply:</Text>
 
@@ -1515,6 +1655,87 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  datePickerSection: {
+    marginBottom: 20,
+  },
+  datePickerLabel: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#333',
+    marginBottom: 8,
+  },
+  datePickerButton: {
+    backgroundColor: '#fff',
+    padding: 16,
+    borderRadius: 8,
+    borderWidth: 2,
+    borderColor: '#2196F3',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    shadowColor: '#2196F3',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  datePickerIcon: {
+    fontSize: 24,
+    marginRight: 12,
+  },
+  dateInputText: {
+    fontSize: 16,
+    color: '#333',
+    flex: 1,
+    fontWeight: '500',
+  },
+  dateInputPlaceholder: {
+    fontSize: 16,
+    color: '#999',
+    flex: 1,
+  },
+  datePickerArrow: {
+    fontSize: 12,
+    color: '#2196F3',
+    marginLeft: 8,
+  },
+  datePickerModal: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  datePickerContainer: {
+    backgroundColor: '#fff',
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    paddingBottom: Platform.OS === 'ios' ? 34 : 20,
+  },
+  datePickerHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#e0e0e0',
+  },
+  datePickerTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#333',
+  },
+  datePickerModalButton: {
+    fontSize: 16,
+    color: '#666',
+    paddingHorizontal: 8,
+  },
+  datePickerButtonDone: {
+    color: '#2196F3',
+    fontWeight: '600',
+  },
+  datePicker: {
+    width: '100%',
+    height: 200,
   },
 });
 

@@ -289,3 +289,6 @@ All errors have been fixed and your Gas Inspection App is now running on:
 **Next Action**: Scan QR code with Expo Go on your phone!
 
 
+
+
+
